@@ -1,2 +1,2 @@
 # Inteligencia-Artificial
-Temas de IA
+Trabajos de IA
