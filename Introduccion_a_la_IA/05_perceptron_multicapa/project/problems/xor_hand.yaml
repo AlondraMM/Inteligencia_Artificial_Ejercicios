@@ -1,0 +1,25 @@
+# Lecture XOR: hand-set threshold weights (OR, NAND, AND). Forward only.
+name: XOR (hand-set threshold weights)
+
+hidden: 2
+hidden_act: step
+out_act: step
+epochs: 0
+learning_rate: 0
+seed: 0
+
+examples:
+  - {x: [0, 0], y: [0]}
+  - {x: [0, 1], y: [1]}
+  - {x: [1, 0], y: [1]}
+  - {x: [1, 1], y: [0]}
+
+weights:
+  # h1 ≈ OR, h2 ≈ NAND, output ≈ AND(h1, h2)
+  W_hidden:
+    - [1.0, 1.0]
+    - [-1.0, -1.0]
+  b_hidden: [-0.5, 1.5]
+  W_out:
+    - [1.0, 1.0]
+  b_out: [-1.5]
