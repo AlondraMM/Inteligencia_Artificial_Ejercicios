@@ -1,0 +1,21 @@
+name: Six small clouds
+k: 6
+kind: blobs
+features: [x, y]
+init: random
+n_init: 1
+max_iter: 100
+seed: 0
+k_min: 1
+k_max: 8
+
+# Far-apart blobs. One random draw of 6 seeds often misses a cloud.
+centers:
+  - [0.0, 0.0]
+  - [0.0, 6.0]
+  - [6.0, 0.0]
+  - [6.0, 6.0]
+  - [12.0, 0.0]
+  - [12.0, 6.0]
+cluster_std: 0.35
+n_per_cluster: 25

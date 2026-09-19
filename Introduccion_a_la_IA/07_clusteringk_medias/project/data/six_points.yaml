@@ -1,0 +1,22 @@
+name: Lecture 6 points
+k: 2
+kind: points
+features: [x, y]
+init: given
+n_init: 1
+max_iter: 10
+seed: 0
+k_min: 1
+k_max: 4
+
+centroids:
+  - [1.0, 1.0]    # μA: on P1
+  - [2.0, 1.0]    # μB: on P2  (both seeds on the left cloud)
+
+points:
+  - {id: P1, x: 1.0, y: 1.0}
+  - {id: P2, x: 2.0, y: 1.0}
+  - {id: P3, x: 1.0, y: 2.0}
+  - {id: P4, x: 8.0, y: 8.0}
+  - {id: P5, x: 9.0, y: 8.0}
+  - {id: P6, x: 8.0, y: 9.0}

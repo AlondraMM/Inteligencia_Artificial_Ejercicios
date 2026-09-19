@@ -1,0 +1,13 @@
+name: Two moons
+k: 2
+kind: moons
+features: [x, y]
+init: k-means++
+n_init: 10
+max_iter: 100
+seed: 0
+k_min: 2
+k_max: 6
+
+n: 220
+noise: 0.08

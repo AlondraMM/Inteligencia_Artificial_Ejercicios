@@ -1,0 +1,18 @@
+name: Three Gaussian clouds
+k: 3
+kind: blobs
+features: [x, y]
+init: k-means++
+n_init: 10
+max_iter: 100
+seed: 0
+k_min: 1
+k_max: 8
+
+# Equilateral-ish triangle: elbow and silhouette both pick k = 3.
+centers:
+  - [0.0, 0.0]
+  - [5.0, 0.0]
+  - [2.5, 4.33]
+cluster_std: 0.60
+n_per_cluster: 60

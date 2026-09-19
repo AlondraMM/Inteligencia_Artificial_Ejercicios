@@ -1,0 +1,15 @@
+name: Age vs income
+k: 2
+kind: groups
+features: [age, income]
+init: k-means++
+n_init: 10
+max_iter: 100
+seed: 0
+k_min: 1
+k_max: 4
+
+# Two age groups, almost the same income. Without scaling, L2 follows income.
+groups:
+  - {n: 50, age: 28, age_std: 2.5, income: 50000, income_std: 9000}
+  - {n: 50, age: 55, age_std: 2.5, income: 50000, income_std: 9000}
