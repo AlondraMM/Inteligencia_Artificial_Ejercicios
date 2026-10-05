@@ -1,0 +1,13 @@
+# Reporte — AstroBot
+
+**Dominio y corpus.** Hay seis documentos Markdown sobre astronomía, cosmología, agujeros negros y el origen del universo.
+
+**Partición.** `app/chunk.py` extrae texto de Markdown, TXT UTF-8 o PDF y crea ventanas de 250 palabras con 50 palabras de solape. El avance de 200 palabras limita el tamaño enviado al modelo y mantiene contexto compartido en los límites. En PDF cada página se procesa por separado y se conserva su número. Los archivos vacíos y los PDF sin texto extraíble se rechazan.
+
+**Recuperación y persistencia.** Google AI genera los embeddings con `gemini-embedding-001`, tanto para documentos como para preguntas; se usan las tareas complementarias `RETRIEVAL_DOCUMENT` y `RETRIEVAL_QUERY`. ChromaDB persiste textos, vectores y metadatos en `chroma/`, busca por distancia coseno y devuelve cuatro vecinos por defecto (`top_k` configurable entre 1 y 10). El score es `1 - distancia`, limitado a `[0,1]`. Se registra el modelo para detectar índices incompatibles. Al reindexar, se incorporan los nuevos chunks antes de borrar los obsoletos, conservando la versión previa si Chroma rechaza los vectores. Reiniciar con la misma ruta debe conservar el índice.
+
+**Generación y abstención.** Después de recuperar, Gemini `gemini-3.6-flash` recibe la pregunta y los chunks numerados `[1]`, `[2]`, etc. El prompt exige español, citas y evidencia exclusiva. La API se abstiene si no hay chunks o el mejor score es inferior a 0.55. Gemini debe emitir `NO_EVIDENCIA` si el contexto no responde; respuestas vacías, sin citas o con citas inexistentes se convierten en «No tengo evidencia suficiente en el corpus para responder esa pregunta». Las citas agrupadas se normalizan y validan. Su validez numérica no sustituye revisar su soporte factual.
+
+**Integración.** Streamlit carga documentos, consulta y muestra respuestas con sus fragmentos, fuentes y scores usando HTTP hacia FastAPI. La UI no accede directamente a Google ni a Chroma. FastAPI coordina extracción, embeddings, persistencia, recuperación y generación; documenta `/health`, `/ingest` y `/query` en `/docs`. Google proporciona vectores y texto generado; Chroma almacena y recupera evidencia, sin generar respuestas.
+
+**Cuota y errores transitorios.** Con la cuota observada de 100 embeddings por minuto, indexar 943 chunks puede tardar unos diez minutos. Se hacen hasta cuatro intentos por petición, respetando `RetryInfo` en los 429 recuperables o esperando 60 segundos si falta. Si persiste la cuota agotada, la API responde 429 con un mensaje claro. El SDK espera hasta 120 segundos; la UI admite 1800 para ingestión y 180 para consulta.
