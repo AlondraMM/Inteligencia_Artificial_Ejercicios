@@ -1,0 +1,59 @@
+{
+  "config": {
+    "batch_name": "Class demo",
+    "threshold": 0.9,
+    "max_records": 10
+  },
+  "accepted": [
+    {
+      "text": "excellent",
+      "label": "positive",
+      "score": 0.98,
+      "source": null
+    },
+    {
+      "text": "zero is valid",
+      "label": "neutral",
+      "score": 0.0,
+      "source": null
+    }
+  ],
+  "issues": [
+    {
+      "position": 2,
+      "field": "score",
+      "message": "Input should be less than or equal to 1",
+      "error_type": "less_than_equal"
+    },
+    {
+      "position": 3,
+      "field": "label",
+      "message": "Input should be 'positive', 'neutral' or 'negative'",
+      "error_type": "literal_error"
+    },
+    {
+      "position": 4,
+      "field": "score",
+      "message": "Field required",
+      "error_type": "missing"
+    },
+    {
+      "position": 5,
+      "field": "<record>",
+      "message": "Input should be a valid dictionary or instance of Prediction",
+      "error_type": "model_type"
+    },
+    {
+      "position": 6,
+      "field": "label",
+      "message": "Input should be 'positive', 'neutral' or 'negative'",
+      "error_type": "literal_error"
+    },
+    {
+      "position": 6,
+      "field": "score",
+      "message": "Input should be less than or equal to 1",
+      "error_type": "less_than_equal"
+    }
+  ]
+}
