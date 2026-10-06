@@ -14,3 +14,6 @@
 | 06. Visión computacional | [06_vision_computacional](Introduccion_a_la_IA/06_vision_computacional) | [Ejercicios](Introduccion_a_la_IA/06_vision_computacional/ejercicios) |
 | 07. Clustering k-medias | [07_clusteringk_medias](Introduccion_a_la_IA/07_clusteringk_medias) | [Ejercicios](Introduccion_a_la_IA/07_clusteringk_medias/ejercicios) |
 | 08. Proyecto final: RAG | [08_proyecto_final](Introduccion_a_la_IA/08_proyecto_final) | [AstroBot y guía de ejecución](Introduccion_a_la_IA/08_proyecto_final/rag-app/README.md) |
+
+## Programación para IA
+
