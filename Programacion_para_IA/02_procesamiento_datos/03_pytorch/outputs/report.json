@@ -1,0 +1,33 @@
+{
+  "dataset": "CIFAR-10",
+  "split": "test",
+  "dataset_size": 10000,
+  "selection": "first samples in dataset order",
+  "samples_used": 10,
+  "batch_size": 4,
+  "image_shape": [
+    10,
+    3,
+    32,
+    32
+  ],
+  "image_dtype": "torch.float32",
+  "image_layout": "NCHW",
+  "image_range": [
+    0.0,
+    1.0
+  ],
+  "label_dtype": "torch.int64",
+  "classes": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ]
+}

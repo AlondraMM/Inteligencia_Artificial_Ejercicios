@@ -1,0 +1,9 @@
+[project]
+name = "database-clients-lab"
+version = "0.1.0"
+description = "Query SQLite tables and Neo4j graphs from Python"
+requires-python = ">=3.12"
+dependencies = ["pandas>=2.2,<4", "neo4j>=6,<7"]
+
+[dependency-groups]
+dev = ["ipykernel>=6,<8", "nbconvert>=7,<8", "pip>=25,<27"]

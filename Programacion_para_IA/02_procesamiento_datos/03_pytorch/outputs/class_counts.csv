@@ -1,0 +1,11 @@
+class_id,class_name,count,proportion
+0,airplane,1,0.1
+1,automobile,2,0.2
+2,bird,0,0.0
+3,cat,2,0.2
+4,deer,0,0.0
+5,dog,0,0.0
+6,frog,3,0.3
+7,horse,0,0.0
+8,ship,2,0.2
+9,truck,0,0.0
