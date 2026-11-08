@@ -1,0 +1,174 @@
+{
+  "modelo": "arbol",
+  "familia": "Árbol de regresión",
+  "columnas_entrada": [
+    "tau1",
+    "tau2",
+    "tau3",
+    "tau4",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "g1",
+    "g2",
+    "g3",
+    "g4"
+  ],
+  "objetivo": "stab",
+  "hiperparametros_seleccionados": {
+    "modelo__ccp_alpha": 0.0,
+    "modelo__max_depth": null,
+    "modelo__min_samples_leaf": 5
+  },
+  "procedencia_hiperparametros": {
+    "hiperparametros": {
+      "modelo__ccp_alpha": 0.0,
+      "modelo__max_depth": null,
+      "modelo__min_samples_leaf": 5
+    },
+    "frecuencia_ganadora": 2,
+    "pliegues_donde_gano": [
+      1,
+      2
+    ],
+    "empate_frecuencia": true,
+    "RMSE_interno_medio_bucles_solo_apoyo": 0.01929236552392288,
+    "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+  },
+  "parametros_regresor_incluidos_fijos": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 5,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": 42,
+    "splitter": "best"
+  },
+  "configuracion_pipeline": {
+    "memory": null,
+    "steps": [
+      [
+        "modelo",
+        {
+          "clase": "DecisionTreeRegressor",
+          "parametros": {
+            "ccp_alpha": 0.0,
+            "criterion": "squared_error",
+            "max_depth": null,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 5,
+            "min_samples_split": 2,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": 42,
+            "splitter": "best"
+          }
+        }
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "modelo": {
+      "clase": "DecisionTreeRegressor",
+      "parametros": {
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": null,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 42,
+        "splitter": "best"
+      }
+    },
+    "modelo__ccp_alpha": 0.0,
+    "modelo__criterion": "squared_error",
+    "modelo__max_depth": null,
+    "modelo__max_features": null,
+    "modelo__max_leaf_nodes": null,
+    "modelo__min_impurity_decrease": 0.0,
+    "modelo__min_samples_leaf": 5,
+    "modelo__min_samples_split": 2,
+    "modelo__min_weight_fraction_leaf": 0.0,
+    "modelo__monotonic_cst": null,
+    "modelo__random_state": 42,
+    "modelo__splitter": "best"
+  },
+  "escaladores": {},
+  "espacio_busqueda_cv_anidada": [
+    {
+      "modelo__max_depth": [
+        4,
+        8,
+        12,
+        null
+      ],
+      "modelo__min_samples_leaf": [
+        1,
+        5,
+        20
+      ],
+      "modelo__ccp_alpha": [
+        0.0
+      ]
+    },
+    {
+      "modelo__max_depth": [
+        null
+      ],
+      "modelo__min_samples_leaf": [
+        1
+      ],
+      "modelo__ccp_alpha": [
+        1e-07,
+        1e-06,
+        1e-05,
+        0.0001
+      ]
+    }
+  ],
+  "n_candidatos_por_busqueda_interna_cv_anidada": 16,
+  "busqueda_adicional_final": false,
+  "ajustes_finales": 1,
+  "metricas_cv_anidada": {
+    "familia": "Árbol de regresión",
+    "RMSE_CV_anidada": 0.0184898767361472,
+    "RMSE_sd": 0.0003615101472646,
+    "MAE_CV_anidada": 0.0144039505986945,
+    "MAE_sd": 0.0002961306471671,
+    "R2_CV_anidada": 0.7492660193421686,
+    "R2_sd": 0.0084787568233843,
+    "RMSE_entrenamiento_externo": 0.0101836388112422,
+    "segundos_busquedas_externas": 22.51928162574768,
+    "RMSE_OOF": 0.0184934104833179,
+    "brecha_RMSE": 0.008306237924905
+  },
+  "alcance_metricas_cv_anidada": "Evaluación del procedimiento de selección por fold; test evalúa el pipeline final consensuado.",
+  "metricas_entrenamiento_completo": {
+    "RMSE": 0.008579350213948978,
+    "MAE": 0.006457141431931548,
+    "R2": 0.9460769141305106
+  },
+  "versiones": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.3"
+  },
+  "semilla_modelo": 42,
+  "profundidad_ajustada": 17,
+  "hojas_ajustadas": 1294
+}

@@ -1,0 +1,3 @@
+hiperparametros,RMSE_interno_medio_bucles,RMSE_entrenamiento_interno_medio_bucles,n_bucles_internos,veces_ganadora,seleccionada_final
+"{""poly__degree"": 3}",0.00879892352743512,0.00799830869230574,5,5,True
+"{""poly__degree"": 2}",0.0123494464505551,0.012131746198065941,5,0,False

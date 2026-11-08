@@ -1,0 +1,186 @@
+{
+  "modelo": "svr_rbf",
+  "familia": "SVR RBF",
+  "columnas_entrada": [
+    "tau1",
+    "tau2",
+    "tau3",
+    "tau4",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "g1",
+    "g2",
+    "g3",
+    "g4"
+  ],
+  "objetivo": "stab",
+  "hiperparametros_seleccionados": {
+    "modelo__C": 0.1,
+    "modelo__epsilon": 0.001,
+    "modelo__gamma": 0.1
+  },
+  "procedencia_hiperparametros": {
+    "hiperparametros": {
+      "modelo__C": 0.1,
+      "modelo__epsilon": 0.001,
+      "modelo__gamma": 0.1
+    },
+    "frecuencia_ganadora": 5,
+    "pliegues_donde_gano": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "empate_frecuencia": false,
+    "RMSE_interno_medio_bucles_solo_apoyo": 0.0078122403578904,
+    "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+  },
+  "parametros_regresor_incluidos_fijos": {
+    "C": 0.1,
+    "cache_size": 256,
+    "coef0": 0.0,
+    "degree": 3,
+    "epsilon": 0.001,
+    "gamma": 0.1,
+    "kernel": "rbf",
+    "max_iter": -1,
+    "shrinking": true,
+    "tol": 0.001,
+    "verbose": false
+  },
+  "configuracion_pipeline": {
+    "memory": null,
+    "steps": [
+      [
+        "escala",
+        {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        }
+      ],
+      [
+        "modelo",
+        {
+          "clase": "SVR",
+          "parametros": {
+            "C": 0.1,
+            "cache_size": 256,
+            "coef0": 0.0,
+            "degree": 3,
+            "epsilon": 0.001,
+            "gamma": 0.1,
+            "kernel": "rbf",
+            "max_iter": -1,
+            "shrinking": true,
+            "tol": 0.001,
+            "verbose": false
+          }
+        }
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "escala": {
+      "clase": "StandardScaler",
+      "parametros": {
+        "copy": true,
+        "with_mean": true,
+        "with_std": true
+      }
+    },
+    "modelo": {
+      "clase": "SVR",
+      "parametros": {
+        "C": 0.1,
+        "cache_size": 256,
+        "coef0": 0.0,
+        "degree": 3,
+        "epsilon": 0.001,
+        "gamma": 0.1,
+        "kernel": "rbf",
+        "max_iter": -1,
+        "shrinking": true,
+        "tol": 0.001,
+        "verbose": false
+      }
+    },
+    "escala__copy": true,
+    "escala__with_mean": true,
+    "escala__with_std": true,
+    "modelo__C": 0.1,
+    "modelo__cache_size": 256,
+    "modelo__coef0": 0.0,
+    "modelo__degree": 3,
+    "modelo__epsilon": 0.001,
+    "modelo__gamma": 0.1,
+    "modelo__kernel": "rbf",
+    "modelo__max_iter": -1,
+    "modelo__shrinking": true,
+    "modelo__tol": 0.001,
+    "modelo__verbose": false
+  },
+  "escaladores": {
+    "escala": {
+      "clase": "StandardScaler",
+      "parametros": {
+        "copy": true,
+        "with_mean": true,
+        "with_std": true
+      }
+    }
+  },
+  "espacio_busqueda_cv_anidada": {
+    "modelo__C": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "modelo__epsilon": [
+      0.001,
+      0.005,
+      0.01
+    ],
+    "modelo__gamma": [
+      0.01,
+      0.1
+    ]
+  },
+  "n_candidatos_por_busqueda_interna_cv_anidada": 18,
+  "busqueda_adicional_final": false,
+  "ajustes_finales": 1,
+  "metricas_cv_anidada": {
+    "familia": "SVR RBF",
+    "RMSE_CV_anidada": 0.0076080209593621,
+    "RMSE_sd": 0.0001700315736513,
+    "MAE_CV_anidada": 0.0049285541802321,
+    "MAE_sd": 0.0001366970661675,
+    "R2_CV_anidada": 0.9575275530049596,
+    "R2_sd": 0.0020895015473558,
+    "RMSE_entrenamiento_externo": 0.004583939531186,
+    "segundos_busquedas_externas": 1152.3954513072968,
+    "RMSE_OOF": 0.0076099207390177,
+    "brecha_RMSE": 0.003024081428176
+  },
+  "alcance_metricas_cv_anidada": "Evaluación del procedimiento de selección por fold; test evalúa el pipeline final consensuado.",
+  "metricas_entrenamiento_completo": {
+    "RMSE": 0.004723476941698646,
+    "MAE": 0.0025338279971336437,
+    "R2": 0.9836548261450461
+  },
+  "versiones": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.3"
+  },
+  "semilla_modelo": 42
+}

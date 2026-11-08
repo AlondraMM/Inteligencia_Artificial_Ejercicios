@@ -1,0 +1,19 @@
+hiperparametros,RMSE_interno_medio_bucles,RMSE_entrenamiento_interno_medio_bucles,n_bucles_internos,veces_ganadora,seleccionada_final
+"{""modelo__C"": 0.1, ""modelo__epsilon"": 0.001, ""modelo__gamma"": 0.1}",0.0078122403578904,0.004432462842694039,5,5,True
+"{""modelo__C"": 0.1, ""modelo__epsilon"": 0.005, ""modelo__gamma"": 0.1}",0.00831437217265694,0.00512607224304714,5,0,False
+"{""modelo__C"": 10.0, ""modelo__epsilon"": 0.001, ""modelo__gamma"": 0.01}",0.00841550372775374,0.007484954109393401,5,0,False
+"{""modelo__C"": 10.0, ""modelo__epsilon"": 0.005, ""modelo__gamma"": 0.01}",0.0085023573656312,0.00742447604898646,5,0,False
+"{""modelo__C"": 1.0, ""modelo__epsilon"": 0.001, ""modelo__gamma"": 0.1}",0.0087404178125276,0.00140824678160848,5,0,False
+"{""modelo__C"": 1.0, ""modelo__epsilon"": 0.005, ""modelo__gamma"": 0.1}",0.00877230006560242,0.00401539745392882,5,0,False
+"{""modelo__C"": 10.0, ""modelo__epsilon"": 0.005, ""modelo__gamma"": 0.1}",0.00881077981611302,0.00400952738716578,5,0,False
+"{""modelo__C"": 10.0, ""modelo__epsilon"": 0.001, ""modelo__gamma"": 0.1}",0.00901241219563478,0.00110278991072112,5,0,False
+"{""modelo__C"": 10.0, ""modelo__epsilon"": 0.01, ""modelo__gamma"": 0.01}",0.0090459538880556,0.00796244723499042,5,0,False
+"{""modelo__C"": 1.0, ""modelo__epsilon"": 0.001, ""modelo__gamma"": 0.01}",0.00922796041997944,0.00874958969925836,5,0,False
+"{""modelo__C"": 0.1, ""modelo__epsilon"": 0.01, ""modelo__gamma"": 0.1}",0.00929852897019362,0.0069505828430601,5,0,False
+"{""modelo__C"": 1.0, ""modelo__epsilon"": 0.01, ""modelo__gamma"": 0.1}",0.00942960045936978,0.0066466936404785595,5,0,False
+"{""modelo__C"": 10.0, ""modelo__epsilon"": 0.01, ""modelo__gamma"": 0.1}",0.00942967664159566,0.0066465833845836,5,0,False
+"{""modelo__C"": 1.0, ""modelo__epsilon"": 0.005, ""modelo__gamma"": 0.01}",0.00953276186014684,0.00899743221885504,5,0,False
+"{""modelo__C"": 1.0, ""modelo__epsilon"": 0.01, ""modelo__gamma"": 0.01}",0.010208032853944959,0.00964109897849964,5,0,False
+"{""modelo__C"": 0.1, ""modelo__epsilon"": 0.001, ""modelo__gamma"": 0.01}",0.01174087194817676,0.01148280033542394,5,0,False
+"{""modelo__C"": 0.1, ""modelo__epsilon"": 0.005, ""modelo__gamma"": 0.01}",0.01182984989691808,0.01156624809608222,5,0,False
+"{""modelo__C"": 0.1, ""modelo__epsilon"": 0.01, ""modelo__gamma"": 0.01}",0.012170558143038801,0.01191532006702708,5,0,False

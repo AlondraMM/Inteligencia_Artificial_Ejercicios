@@ -1,0 +1,231 @@
+{
+  "modelo": "lineal",
+  "familia": "Regresión lineal",
+  "columnas_entrada": [
+    "tau1",
+    "tau2",
+    "tau3",
+    "tau4",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "g1",
+    "g2",
+    "g3",
+    "g4"
+  ],
+  "objetivo": "stab",
+  "hiperparametros_seleccionados": {},
+  "procedencia_hiperparametros": {
+    "hiperparametros": {},
+    "frecuencia_ganadora": 5,
+    "pliegues_donde_gano": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "empate_frecuencia": false,
+    "RMSE_interno_medio_bucles_solo_apoyo": 0.02208453877650532,
+    "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+  },
+  "parametros_regresor_incluidos_fijos": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "configuracion_pipeline": {
+    "memory": null,
+    "steps": [
+      [
+        "seleccion",
+        {
+          "clase": "ColumnTransformer",
+          "parametros": {
+            "force_int_remainder_cols": "deprecated",
+            "n_jobs": null,
+            "remainder": "drop",
+            "sparse_threshold": 0.3,
+            "transformer_weights": null,
+            "transformers": [
+              [
+                "sin_p1",
+                "passthrough",
+                [
+                  "tau1",
+                  "tau2",
+                  "tau3",
+                  "tau4",
+                  "p2",
+                  "p3",
+                  "p4",
+                  "g1",
+                  "g2",
+                  "g3",
+                  "g4"
+                ]
+              ]
+            ],
+            "verbose": false,
+            "verbose_feature_names_out": true
+          }
+        }
+      ],
+      [
+        "escala",
+        {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        }
+      ],
+      [
+        "modelo",
+        {
+          "clase": "LinearRegression",
+          "parametros": {
+            "copy_X": true,
+            "fit_intercept": true,
+            "n_jobs": null,
+            "positive": false,
+            "tol": 1e-06
+          }
+        }
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "seleccion": {
+      "clase": "ColumnTransformer",
+      "parametros": {
+        "force_int_remainder_cols": "deprecated",
+        "n_jobs": null,
+        "remainder": "drop",
+        "sparse_threshold": 0.3,
+        "transformer_weights": null,
+        "transformers": [
+          [
+            "sin_p1",
+            "passthrough",
+            [
+              "tau1",
+              "tau2",
+              "tau3",
+              "tau4",
+              "p2",
+              "p3",
+              "p4",
+              "g1",
+              "g2",
+              "g3",
+              "g4"
+            ]
+          ]
+        ],
+        "verbose": false,
+        "verbose_feature_names_out": true
+      }
+    },
+    "escala": {
+      "clase": "StandardScaler",
+      "parametros": {
+        "copy": true,
+        "with_mean": true,
+        "with_std": true
+      }
+    },
+    "modelo": {
+      "clase": "LinearRegression",
+      "parametros": {
+        "copy_X": true,
+        "fit_intercept": true,
+        "n_jobs": null,
+        "positive": false,
+        "tol": 1e-06
+      }
+    },
+    "seleccion__force_int_remainder_cols": "deprecated",
+    "seleccion__n_jobs": null,
+    "seleccion__remainder": "drop",
+    "seleccion__sparse_threshold": 0.3,
+    "seleccion__transformer_weights": null,
+    "seleccion__transformers": [
+      [
+        "sin_p1",
+        "passthrough",
+        [
+          "tau1",
+          "tau2",
+          "tau3",
+          "tau4",
+          "p2",
+          "p3",
+          "p4",
+          "g1",
+          "g2",
+          "g3",
+          "g4"
+        ]
+      ]
+    ],
+    "seleccion__verbose": false,
+    "seleccion__verbose_feature_names_out": true,
+    "seleccion__sin_p1": "passthrough",
+    "escala__copy": true,
+    "escala__with_mean": true,
+    "escala__with_std": true,
+    "modelo__copy_X": true,
+    "modelo__fit_intercept": true,
+    "modelo__n_jobs": null,
+    "modelo__positive": false,
+    "modelo__tol": 1e-06
+  },
+  "escaladores": {
+    "escala": {
+      "clase": "StandardScaler",
+      "parametros": {
+        "copy": true,
+        "with_mean": true,
+        "with_std": true
+      }
+    }
+  },
+  "espacio_busqueda_cv_anidada": {},
+  "n_candidatos_por_busqueda_interna_cv_anidada": 1,
+  "busqueda_adicional_final": false,
+  "ajustes_finales": 1,
+  "metricas_cv_anidada": {
+    "familia": "Regresión lineal",
+    "RMSE_CV_anidada": 0.0220814744826378,
+    "RMSE_sd": 0.0003010061921883,
+    "MAE_CV_anidada": 0.0175305053494639,
+    "MAE_sd": 0.0002407270088864,
+    "R2_CV_anidada": 0.6424983889541229,
+    "R2_sd": 0.0048295526390256,
+    "RMSE_entrenamiento_externo": 0.0220484141588427,
+    "segundos_busquedas_externas": 9.327534914016724,
+    "RMSE_OOF": 0.022083525987829,
+    "brecha_RMSE": 3.306032379508245e-05
+  },
+  "alcance_metricas_cv_anidada": "Evaluación del procedimiento de selección por fold; test evalúa el pipeline final consensuado.",
+  "metricas_entrenamiento_completo": {
+    "RMSE": 0.02205204366950089,
+    "MAE": 0.017504678407960887,
+    "R2": 0.6437428143789488
+  },
+  "versiones": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.3"
+  },
+  "semilla_modelo": 42
+}

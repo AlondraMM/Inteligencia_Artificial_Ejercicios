@@ -1,0 +1,233 @@
+{
+  "creado_utc": "2026-11-08T22:06:02.596329+00:00",
+  "python": "3.10.20",
+  "versiones": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.3"
+  },
+  "archivo_entrenamiento": "/home/ec2-user/SageMaker/02_Metodos_de_Regresion/Data/electrical_grid_stability_train.csv",
+  "sha256_entrenamiento": "49332ad35f479effb779b6f8c9ebcf92481a7b843cd95a64e82c0d8eda9557b3",
+  "n_observaciones_entrenamiento": 8000,
+  "columnas_entrada": [
+    "tau1",
+    "tau2",
+    "tau3",
+    "tau4",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "g1",
+    "g2",
+    "g3",
+    "g4"
+  ],
+  "objetivo": "stab",
+  "semilla": 42,
+  "protocolo": {
+    "pliegues_externos": 5,
+    "pliegues_internos": 5,
+    "criterio": "neg_root_mean_squared_error",
+    "semilla_interna": 1,
+    "semilla_externa": 2,
+    "metricas_externas": {
+      "RMSE": "neg_root_mean_squared_error",
+      "MAE": "neg_mean_absolute_error",
+      "R2": "r2"
+    },
+    "ddof_desviacion_folds": 0,
+    "busqueda_adicional_final": false,
+    "ajustes_finales_por_familia": 1,
+    "regla_hiperparametros_finales": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+  },
+  "familia_seleccionada_por_cv_anidada": "svr_rbf",
+  "modelos": {
+    "lineal": {
+      "nombre": "Regresión lineal",
+      "archivo_modelo": "lineal.joblib",
+      "archivo_hiperparametros": "lineal_hiperparametros.json",
+      "busqueda_adicional_final": false,
+      "escaladores": {
+        "escala": {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        }
+      },
+      "hiperparametros_seleccionados": {},
+      "procedencia_hiperparametros": {
+        "hiperparametros": {},
+        "frecuencia_ganadora": 5,
+        "pliegues_donde_gano": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "empate_frecuencia": false,
+        "RMSE_interno_medio_bucles_solo_apoyo": 0.02208453877650532,
+        "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+      }
+    },
+    "polinomial": {
+      "nombre": "Polinomial sin regularización",
+      "archivo_modelo": "polinomial.joblib",
+      "archivo_hiperparametros": "polinomial_hiperparametros.json",
+      "busqueda_adicional_final": false,
+      "escaladores": {
+        "escala_entrada": {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        },
+        "escala_monomios": {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        }
+      },
+      "hiperparametros_seleccionados": {
+        "poly__degree": 3
+      },
+      "procedencia_hiperparametros": {
+        "hiperparametros": {
+          "poly__degree": 3
+        },
+        "frecuencia_ganadora": 5,
+        "pliegues_donde_gano": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "empate_frecuencia": false,
+        "RMSE_interno_medio_bucles_solo_apoyo": 0.00879892352743512,
+        "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+      }
+    },
+    "polinomial_ridge": {
+      "nombre": "Polinomial Ridge",
+      "archivo_modelo": "polinomial_ridge.joblib",
+      "archivo_hiperparametros": "polinomial_ridge_hiperparametros.json",
+      "busqueda_adicional_final": false,
+      "escaladores": {
+        "escala_entrada": {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        },
+        "escala_monomios": {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        }
+      },
+      "hiperparametros_seleccionados": {
+        "modelo__alpha": 1.0,
+        "poly__degree": 3
+      },
+      "procedencia_hiperparametros": {
+        "hiperparametros": {
+          "modelo__alpha": 1.0,
+          "poly__degree": 3
+        },
+        "frecuencia_ganadora": 4,
+        "pliegues_donde_gano": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "empate_frecuencia": false,
+        "RMSE_interno_medio_bucles_solo_apoyo": 0.00879850177249738,
+        "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+      }
+    },
+    "svr_rbf": {
+      "nombre": "SVR RBF",
+      "archivo_modelo": "svr_rbf.joblib",
+      "archivo_hiperparametros": "svr_rbf_hiperparametros.json",
+      "busqueda_adicional_final": false,
+      "escaladores": {
+        "escala": {
+          "clase": "StandardScaler",
+          "parametros": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+          }
+        }
+      },
+      "hiperparametros_seleccionados": {
+        "modelo__C": 0.1,
+        "modelo__epsilon": 0.001,
+        "modelo__gamma": 0.1
+      },
+      "procedencia_hiperparametros": {
+        "hiperparametros": {
+          "modelo__C": 0.1,
+          "modelo__epsilon": 0.001,
+          "modelo__gamma": 0.1
+        },
+        "frecuencia_ganadora": 5,
+        "pliegues_donde_gano": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "empate_frecuencia": false,
+        "RMSE_interno_medio_bucles_solo_apoyo": 0.0078122403578904,
+        "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+      }
+    },
+    "arbol": {
+      "nombre": "Árbol de regresión",
+      "archivo_modelo": "arbol.joblib",
+      "archivo_hiperparametros": "arbol_hiperparametros.json",
+      "busqueda_adicional_final": false,
+      "escaladores": {},
+      "hiperparametros_seleccionados": {
+        "modelo__ccp_alpha": 0.0,
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 5
+      },
+      "procedencia_hiperparametros": {
+        "hiperparametros": {
+          "modelo__ccp_alpha": 0.0,
+          "modelo__max_depth": null,
+          "modelo__min_samples_leaf": 5
+        },
+        "frecuencia_ganadora": 2,
+        "pliegues_donde_gano": [
+          1,
+          2
+        ],
+        "empate_frecuencia": true,
+        "RMSE_interno_medio_bucles_solo_apoyo": 0.01929236552392288,
+        "regla": "Combinación ganadora más frecuente entre los cinco bucles internos; desempate por menor RMSE interno medio de esa combinación en los cinco bucles; último desempate por JSON canónico. Sin usar errores externos ni test."
+      }
+    }
+  }
+}

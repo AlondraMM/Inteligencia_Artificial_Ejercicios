@@ -1,0 +1,17 @@
+hiperparametros,RMSE_interno_medio_bucles,RMSE_entrenamiento_interno_medio_bucles,n_bucles_internos,veces_ganadora,seleccionada_final
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 5}",0.01929236552392288,0.009066954591709139,5,2,True
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 12, ""modelo__min_samples_leaf"": 5}",0.01931489287020614,0.00946119722225618,5,2,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 20}",0.0195006720822484,0.015311558739401241,5,1,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 12, ""modelo__min_samples_leaf"": 20}",0.0195011677420771,0.0153146291805601,5,0,False
+"{""modelo__ccp_alpha"": 1e-06, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 1}",0.02012473461800824,0.01590672109214056,5,0,False
+"{""modelo__ccp_alpha"": 1e-07, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 1}",0.0202166518482251,0.00719779950689092,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 20}",0.02026487624502508,0.01669419656913288,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 5}",0.02029092408958514,0.015351750019896701,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 1}",0.020565510199245622,0.01513296508742834,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 12, ""modelo__min_samples_leaf"": 1}",0.02058670060786058,0.00543896430754422,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 1}",0.02101292574578954,1.7392527131371367e-11,5,0,False
+"{""modelo__ccp_alpha"": 1e-05, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 1}",0.025574400613110337,0.0236981745924364,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 4, ""modelo__min_samples_leaf"": 1}",0.02881431509764344,0.027400034997796717,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 4, ""modelo__min_samples_leaf"": 20}",0.02881431509764344,0.027400034997796717,5,0,False
+"{""modelo__ccp_alpha"": 0.0, ""modelo__max_depth"": 4, ""modelo__min_samples_leaf"": 5}",0.02881431509764344,0.027400034997796717,5,0,False
+"{""modelo__ccp_alpha"": 0.0001, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 1}",0.03376616157865508,0.03322246920035634,5,0,False
